@@ -13,6 +13,8 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'scrooloose/syntastic'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'kannokanno/previm'
+" Plug 'francoiscabrol/ranger.vim'
+" Plug 'rbgrouleff/bclose.vim'
 
 call plug#end()
 
@@ -36,15 +38,5 @@ let g:previm_custom_css_path = '~/dotfiles/templates/previm/markdown.css'
 " NERD tree conf
 let NERDTreeShowHidden = 1
 
-
-" quickrun conf
-"nnoremap <F11> :QuickRun<CR>
-
-"let g:quickrun_config = {
-"	"_" : {
-"		"outputter/buffer/split" : ":botright",
-"		"outputter/buffer/close_on_empty" : 1
-"		},
-"}
-
-" nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : ""
+" ranger.vim conf
+"let g:ranger_map_keys = 0
