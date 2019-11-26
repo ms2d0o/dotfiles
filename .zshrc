@@ -109,3 +109,33 @@ source $ZSH/oh-my-zsh.sh
 #
 source ~/venv-py36/bin/activate
 export FASTD_BASE_PATH="/home/mfujiwara/workspace/FAST-D/fastd-learning"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+
+fbr() {
+  local branches branch
+  branches=$(git branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/,* //")
+}
+
+fbrm() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+  fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+fssh() {
+  local sshLoginHost
+  sshLoginHost=`cat ~/.ssh/config | grep -i ^host | awk '{print $2}' | fzf`
+
+	if [ "$sshLoginHost" = "" ]; then
+	# ex) Ctrl-C.
+  return 1
+  fi
+  ssh ${sshLoginHost}
+}
