@@ -12,6 +12,7 @@ Plugin 'neoclide/coc.nvim'
 Plugin 'scrooloose/syntastic'
 Plugin 'valloric/youcompleteme'
 Plugin 'heavenshell/vim-pydocstring'
+Plugin 'Townk/vim-autoclose'
 
 call vundle#end()
 filetype plugin indent on
