@@ -36,4 +36,3 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
 
-nmap <silent><C-_><Plug>(pydocstring)
