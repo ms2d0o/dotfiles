@@ -43,9 +43,12 @@ nnoremap sh <C-w>h
 nnoremap s\| :<C-u>vs<CR>
 nnoremap s- :<C-u>sp<CR>
 
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+nnoremap <C-k> :cprevious<CR>
+nnoremap <C-j> :cnext<CR>
+
+imap <C-a>     <Plug>(neosnippet_expand_or_jump)
+smap <C-a>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-a>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
 "imap <expr><TAB>
@@ -58,7 +61,9 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 " For conceal markers.
 if has('conceal')
   set conceallevel=2 concealcursor=niv
-  endif
+endif
 
-  "set snippet file dir
-  let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
+"set snippet file dir
+let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
+
+autocmd QuickFixCmdPost *grep* cwindow
