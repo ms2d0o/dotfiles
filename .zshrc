@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/mfujiwara/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -107,12 +107,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-source ~/venv-py36/bin/activate
-export FASTD_BASE_PATH="/home/mfujiwara/workspace/FAST-D/fastd-learning"
-
+source ~/workspace/py3.7/bin/activate
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+
+
 
 fbr() {
   local branches branch
@@ -139,3 +139,5 @@ fssh() {
   fi
   ssh ${sshLoginHost}
 }
+
+export PATH=$HOME/.nodebrew/current/bin:$PATH

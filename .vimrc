@@ -8,32 +8,37 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'indentpython.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'neoclide/coc.nvim'
-Plugin 'scrooloose/syntastic'
-Plugin 'valloric/youcompleteme'
 Plugin 'heavenshell/vim-pydocstring'
 Plugin 'Townk/vim-autoclose'
+Plugin 'Shougo/deoplete.nvim'
+if !has('nvim')
+	  Plugin 'roxma/nvim-yarp'
+	    Plugin 'roxma/vim-hug-neovim-rpc'
+    endif
 
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neosnippet-snippets'
 call vundle#end()
 filetype plugin indent on
 
 map <C-n> :NERDTreeToggle<CR>
 
-set statusline+=%#warningmsg#
-set statusline+=%#{SyntasticStatuslineFlag()}#
-set statusline+=%*
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0 
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-let g:ycm_server_python_interpreter = '/usr/bin/python3.6'
-let g:ycm_python_binary_path = '/usr/bin/python3.6'
-let g:ycm_auto_trigger = 1
-let g:ycm_min_num_of_chars_for_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-set completeopt-=preview
-let g:ycm_add_preview_to_completeopt = 0
-
-nmap <silent><C-_><Plug>(pydocstring)
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
