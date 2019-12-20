@@ -19,6 +19,7 @@ endif
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
