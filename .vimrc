@@ -47,9 +47,9 @@ nnoremap s- :<C-u>sp<CR>
 nnoremap <C-k> :cprevious<CR>
 nnoremap <C-j> :cnext<CR>
 
-imap <C-a>     <Plug>(neosnippet_expand_or_jump)
-smap <C-a>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-a>     <Plug>(neosnippet_expand_target)
+imap <C-s>     <Plug>(neosnippet_expand_or_jump)
+smap <C-s>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-s>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
 "imap <expr><TAB>
