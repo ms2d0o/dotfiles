@@ -5,6 +5,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'scrooloose/syntastic'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'indentpython.vim'
@@ -31,6 +32,8 @@ map <C-n> :NERDTreeToggle<CR>
 set hlsearch
 set incsearch
 set number
+
+let g:syntatstic_python_checkers = ['pyflakes', 'pep8']
 
 " SuperTab like snippets behavior.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
