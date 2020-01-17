@@ -107,8 +107,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-source ~/venv-py36/bin/activate
-export FASTD_BASE_PATH="/home/mfujiwara/workspace/FAST-D/fastd-learning"
+# source ~/venv-py36/bin/activate
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
