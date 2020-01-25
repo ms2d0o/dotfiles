@@ -59,6 +59,7 @@ nnoremap <C-j> :cnext<CR>
 imap <C-s>     <Plug>(neosnippet_expand_or_jump)
 smap <C-s>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-s>     <Plug>(neosnippet_expand_target)
+nmap <silent> <C-_> <Plug>(pydocstring)
 
 " For conceal markers.
 if has('conceal')
