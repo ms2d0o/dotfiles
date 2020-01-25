@@ -141,3 +141,4 @@ fssh() {
 }
 
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+# source $HOME/workspace/py3.7/bin/activate
