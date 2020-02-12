@@ -1,3 +1,4 @@
+set shell=/bin/bash
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -16,6 +17,7 @@ if !has('nvim')
   Plugin 'roxma/vim-hug-neovim-rpc'
 endif
 
+let g:deoplete#enable_at_startup = 1
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'tpope/vim-surround'
@@ -69,3 +71,4 @@ endif
 let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
 
 autocmd QuickFixCmdPost *grep* cwindow
+set shell=/usr/bin/zsh
